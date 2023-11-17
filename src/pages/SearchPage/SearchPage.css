@@ -45,11 +45,13 @@
 }
 
 .movie__poster {
+  transition: all 0.3s;
   width: 90%;
   border-radius: 5px;
 }
 
 .movie__title {
+  transition: all 0.3s;
   width: 50%;
   color: white;
 }

@@ -1,10 +1,11 @@
 import axios from "../../api/axios";
 import React, { useEffect, useState } from "react";
-import { useLocation } from "react-router-dom";
+import { useLocation, useNavigate } from "react-router-dom";
 import "./SearchPage.css";
 import { useDebounce } from "../../hooks/useDebounce";
 
 export default function SearchPage() {
+  const navigate = useNavigate();
   const [searchResults, setSearchResults] = useState([]);
 
   const useQuery = () => {
@@ -22,12 +23,10 @@ export default function SearchPage() {
   }, [debounceSearchTerm]);
 
   const fetchSearchMovie = async (searchTerm) => {
-    console.log("searchTerm", searchTerm);
     try {
       const request = await axios.get(
         `/search/multi?include_adult=false&query=${searchTerm}`
       );
-      console.log(request);
       setSearchResults(request.data.results);
     } catch (err) {
       console.log("err", err);
@@ -43,7 +42,10 @@ export default function SearchPage() {
               "https://image.tmdb.org/t/p/w500" + movie.backdrop_path;
             return (
               <div key={movie.id} className="movie">
-                <div className="movie__column-poster">
+                <div
+                  className="movie__column-poster"
+                  onClick={() => navigate(`/${movie.id}`)}
+                >
                   <img
                     src={movieImageUrl}
                     alt="movieImage"
