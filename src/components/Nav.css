@@ -2,7 +2,7 @@
   position: fixed;
   top: 0;
   width: 100%;
-  height: 40px;
+  height: 30px;
   z-index: 1;
   padding: 20px;
   display: flex;
@@ -21,6 +21,7 @@
   width: 150px;
   object-fit: contain;
   margin-top: 10px;
+  cursor: pointer;
 }
 .nav__avatar {
   position: fixed;
@@ -28,4 +29,17 @@
   width: 40px;
   object-fit: contain;
   margin-top: 10px;
+}
+
+.nav__input {
+  position: fixed;
+  left: 50%;
+  transform: translate(-50%, 0);
+  background-color: rgba(0, 0, 0, 0.582);
+  border-radius: 5px;
+  color: white;
+  padding: 10px;
+  border: none;
+  margin-top: 1rem;
+  font-size: 1.5rem;
 }

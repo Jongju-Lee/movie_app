@@ -25,8 +25,8 @@ const MovieModal = ({
           />
           <div className="modal__content">
             <p className="modal__details">
-              <span className="modal__user_perc">
-                {Math.floor(Math.random() * 101)}% for you
+              <span className="modal__user-perc">
+                {Math.floor(Math.random() * 101)}% for you &nbsp;
               </span>
               {release_date ? release_date : first_air_date}
             </p>
@@ -41,5 +41,3 @@ const MovieModal = ({
 };
 
 export default MovieModal;
-
-// Movie 모달 UI 생성하기

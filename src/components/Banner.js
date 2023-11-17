@@ -31,8 +31,6 @@ const Banner = () => {
     return string?.length > num ? string.substr(0, num - 1) + "..." : string;
   };
 
-  console.log(movie);
-
   if (!isClicked) {
     // play button 누르기 전
     return (
